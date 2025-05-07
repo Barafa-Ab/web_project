@@ -22,7 +22,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #fff9ef;
+    background-color: #f8e7c6;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,15 +87,30 @@ section p {
 }
 
 /* ===== GALLERY ===== */
-.gallery {
+/* .gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+} */
+
+.gallery h1 {
+    text-align: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.gallery .flex-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    gap: 50px;
 }
 
 .gallery img {
-    width: 250px;
+    width: 400px;
     margin: 10px;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -103,4 +118,11 @@ section p {
 
 .gallery img:hover {
     transform: scale(1.05);
+}
+
+.gallery p {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
 }
