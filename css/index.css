@@ -138,119 +138,88 @@ section p {
     line-height: 1.5;
 }
 
-
 /* ===== FOOTER ===== */
-.main-footer {
-    background-color: #f8f4ec;
-    padding: 4rem 10% 2rem;
-    border-top: 1px solid #e3d9c6;
+.custom-footer {
+  background-color: #E7D8C0;
+  color: #333;
+  padding: 40px 60px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1.5fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.footer-logo {
-    width: 180px;
-    margin-bottom: 1.5rem;
+.footer-left {
+  max-width: 300px;
+  margin-left: 50px;
 }
 
-.links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+.footer-left img {
+  width: 150px;
+  margin-bottom: 10px;
 }
 
-.footer-col h3 {
-    color: #4a6450;
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #d4c3a9;
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
 }
 
-.footer-col ul {
-    list-style: none;
-    padding: 0;
+.footer-links {
+  display: flex;
+  gap: 100px;
+  margin-right: 60px;
 }
 
-.footer-col li {
-    margin-bottom: 0.8rem;
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #355E3B;
 }
 
-.footer-col a {
-    color: #6b5d4d;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-col a:hover {
-    color: #4a6450;
+.footer-column ul li {
+  margin-bottom: 8px;
 }
 
-.contact-section h3 {
-    color: #4a6450;
-    margin-bottom: 1.2rem;
+.footer-column ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.address {
-    color: #6b5d4d;
-    line-height: 1.6;
-    margin: 0 0 1.5rem;
+.footer-column ul li a:hover {
+  color: #204020;
+  text-decoration: underline;
 }
 
-.contact-info a {
-    display: block;
-    color: #4a6450;
-    text-decoration: none;
-    margin-bottom: 1rem;
+.footer-column p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-.socials a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #6b5d4d;
-    text-decoration: none;
+/* Sosial Media Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.app-stores {
-    display: flex;
-    gap: 1rem;
+.social-icons a {
+  color: #355E3B;
+  font-size: 24px;
+  transition: color 0.3s ease;
 }
 
-.app-stores img {
-    height: 40px;
-    width: auto;
-    border-radius: 8px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #e3d9c6;
-    color: #6b5d4d;
-    font-size: 0.9rem;
-}
-
-.footer-bottom strong {
-    color: #4a6450;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .links-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-col {
-        margin-bottom: 2rem;
-    }
+.social-icons a:hover {
+  color: #204020; /* Warna lebih gelap dari hijau daun */
 }
