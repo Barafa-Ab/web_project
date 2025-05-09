@@ -13,7 +13,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
+    background-color: #F3EBDD;
     color: #333;
 }
 
@@ -61,10 +61,6 @@ section {
     background-color: #F3EBDD;
 }
 
-section:nth-of-type(even) {
-    background-color: #E7D8C0;
-}
-
 section h1 {
     font-size: 32px;
     color: #355E3B;
@@ -78,6 +74,149 @@ section p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* CSS untuk About Us */
+.about {
+  background-color: #F3EBDD;
+  padding: 80px 5%;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  font-size: 36px;
+  color: #355E3B;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.about h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #355E3B;
+  margin: 15px auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
+
+.about-card i {
+  font-size: 40px;
+  color: #355E3B;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about-card h3 {
+  color: #204020;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.about-card p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-main {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  color: #355E3B;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.about-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.about-list li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+}
+
+.about-list i {
+  color: #355E3B;
+  font-size: 20px;
+}
+
+.cta-button {
+  background: #355E3B;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #204020;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .about-main {
+      flex-direction: column;
+  }
+  
+  .about-image {
+      order: -1;
+  }
 }
 
 /* ===== GALLERY ===== */
@@ -101,7 +240,7 @@ section p {
 }
 
 .home {
-    background-color: #fff;
+    background-color: #fffffff3;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
