@@ -17,6 +17,7 @@
       padding: 0;
       color: #204020;
     }
+    
 
     nav {
       display: flex;
@@ -110,7 +111,7 @@
 
     button {
       padding: 10px 20px;
-      background-color: #000;
+      background-color: #204020;
       color: #fff;
       border: none;
       border-radius: 5px;
@@ -118,7 +119,8 @@
     }
 
     button:hover {
-      background-color: #333;
+      background-color: #306030;
+
     }
 
     .switch-buttons {
@@ -147,22 +149,22 @@
     #form-daftar {
     transform: translateX(0%);
     z-index: 2;
-  }
+    }
 
-  #form-masuk {
-    transform: translateX(200%);
-    z-index: 1;
-  }
+    #form-masuk {
+      transform: translateX(200%);
+      z-index: 1;
+    }
 
-  .show-login #form-daftar {
-    transform: translateX(-200%);
-    z-index: 1;
-  }
+    .show-login #form-daftar {
+      transform: translateX(-200%);
+      z-index: 1;
+    }
 
-  .show-login #form-masuk {
-    transform: translateX(0%);
-    z-index: 2;
-  }
+    .show-login #form-masuk {
+      transform: translateX(0%);
+      z-index: 2;
+    }
 
     footer {
       margin-top: 14px;
@@ -172,6 +174,49 @@
       color: white;
       font-weight: 500;
     }
+    
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 1rem;
+      }
+
+      nav img {
+        width: 140px;
+        padding: 10px;
+      }
+
+      .switch-buttons {
+        flex-direction: column;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+      }
+
+      main {
+        padding: 150px 20px 20px;
+      }
+
+      .form-container {
+        max-width: 100%;
+        padding: 20px;
+      }
+
+      form input {
+        font-size: 1rem;
+      }
+
+      button {
+        width: 100%;
+      } 
+
+      footer {
+        font-size: 0.9rem;
+      }
+    }
+
 
   </style>
 </head>
