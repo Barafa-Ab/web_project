@@ -76,6 +76,73 @@ section p {
     margin: 0 auto;
 }
 
+/* CSS untuk Home Section */
+#home {
+  padding: 60px 5% 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+#home h1 {
+  font-size: 3.5rem;
+  color: #355E3B;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #204020;
+  margin-bottom: 40px;
+}
+
+.hero-highlight {
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hero-highlight p {
+  font-size: 1.1rem;
+  color: #355E3B;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px rgba(0,0,0,0.15);
+}
+
+.featured-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
 /* CSS untuk About Us */
 .about {
   background-color: #F3EBDD;
@@ -207,16 +274,6 @@ section p {
 .about-image img {
   width: 100%;
   border-radius: 15px;
-}
-
-@media (max-width: 768px) {
-  .about-main {
-      flex-direction: column;
-  }
-  
-  .about-image {
-      order: -1;
-  }
 }
 
 /* ===== GALLERY ===== */
@@ -360,5 +417,5 @@ section p {
 }
 
 .social-icons a:hover {
-  color: #204020; /* Warna lebih gelap dari hijau daun */
+  color: #204020; 
 }
