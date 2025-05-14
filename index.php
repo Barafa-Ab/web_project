@@ -3,19 +3,20 @@ session_start();
 $notif = null;
 
 if (isset($_SESSION['notif'])) {
-    $notif = $_SESSION['notif'];
-    unset($_SESSION['notif']); 
+  $notif = $_SESSION['notif'];
+  unset($_SESSION['notif']);
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Masuk / Daftar</title>
 
-  <link rel="stylesheet" href="css/login.css"/>
+  <link rel="stylesheet" href="css/login.css" />
   <style>
     .notif-bar {
       position: fixed;
@@ -30,37 +31,41 @@ if (isset($_SESSION['notif'])) {
       animation: fadeOut 0.5s ease 3s forwards;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
+
     .notif-bar.success {
       background-color: #28a745;
     }
+
     .notif-bar.error {
       background-color: #dc3545;
     }
+
     @keyframes fadeOut {
-    to {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-20px);
-    }
+      to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
     }
   </style>
 
-<script>
-  setTimeout(() => {
-  const notif = document.querySelector('.notif-bar');
-  if (notif) notif.remove();
-  }, 4000); //waktu 4s
-</script>
+  <script>
+    setTimeout(() => {
+      const notif = document.querySelector('.notif-bar');
+      if (notif) notif.remove();
+    }, 4000); //waktu 4s
+  </script>
 
 </head>
+
 <body>
-<?php if ($notif): ?>
-  <div class="notif-bar <?= $notif['type'] ?>">
-    <?= $notif['message'] ?>
-  </div>
-<?php endif; ?>
+  <?php if ($notif): ?>
+    <div class="notif-bar <?= $notif['type'] ?>">
+      <?= $notif['message'] ?>
+    </div>
+  <?php endif; ?>
   <header>
     <nav>
-      <img src="assets/images/logokomplit.png" alt="logo" />
+      <img src="images/logokomplit.png" alt="logo" />
       <ul>
         <li>Selamat Datang di Halaman Login</li>
       </ul>
@@ -72,7 +77,7 @@ if (isset($_SESSION['notif'])) {
       <button id="btnDaftar" class="active">Daftar</button>
       <button id="btnMasuk">Masuk</button>
     </div>
-    
+
 
     <form id="form-daftar" class="form-container" method="POST" action="php/register.php">
       <h2>Daftar Akun</h2>
@@ -118,4 +123,5 @@ if (isset($_SESSION['notif'])) {
   </script>
 
 </body>
+
 </html>

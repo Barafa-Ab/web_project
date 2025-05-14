@@ -42,6 +42,7 @@ body {
 }
 
 .nav-links li a {
+<<<<<<< HEAD
   text-decoration: none;
   color: #355E3B;
   font-weight: 600;
@@ -69,6 +70,17 @@ body {
 .nav-links li a:hover {
   color: #204020;
   border-bottom: none; /* Menghapus border sebelumnya */
+=======
+    text-decoration: none;
+    color: #355E3B;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #204020;
+>>>>>>> 15218f0b3536a5d62460e2712f8c7eec54ad15ba
 }
 
 
