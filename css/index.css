@@ -378,6 +378,7 @@ section p {
 
 .home h1 {
     font-size: 24px;
+    font-weight: 600;
     color: #355E3B;
     margin-bottom: 15px;
 }
@@ -398,6 +399,36 @@ section p {
     font-size: 16px;
     color: #666;
     line-height: 1.5;
+}
+
+/* CSS Gallery CTA */
+.gallery-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+.gallery-cta .cta-button {
+    background: #355E3B;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-cta .cta-button:hover {
+    background: #204020;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-cta .cta-button i {
+    font-size: 24px;
 }
 
 /* ===== FOOTER ===== */
@@ -484,4 +515,132 @@ section p {
 
 .social-icons a:hover {
   color: #204020; 
+}
+
+/* =============================== Bagian Detail Gallery =====================================*/
+.property-details {
+    padding: 80px 5%;
+}
+
+.details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 50px;
+}
+
+.property-images img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.spec-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.spec-item i {
+    font-size: 32px;
+    color: #355E3B;
+    margin-bottom: 10px;
+}
+
+.facility-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.facility-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-tag {
+    background: #355E3B;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.price-tag h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.price-tag p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.property-card .property-info h2 {
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #F3EBDD;
+}
+
+.btn-back, .btn-order {
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-back {
+    background-color: #e7d8c0;
+    color: #355E3B;
+    border: 2px solid #355E3B;
+}
+
+.btn-order {
+    background-color: #355E3B;
+    color: white;
+    border: 2px solid #355E3B;
+}
+
+.btn-back:hover {
+    background-color: #d4c4aa;
+    transform: translateY(-2px);
+}
+
+.btn-order:hover {
+    background-color: #204020;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-back i, .btn-order i {
+    font-size: 20px;
 }
