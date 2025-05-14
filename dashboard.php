@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: index.html");
-    exit();
-}
+// session_start();
+// if (!isset($_SESSION['username'])) {
+//     header("Location: index.html");
+//     exit();
+// }
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +16,7 @@ if (!isset($_SESSION['username'])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/index.css" />
-=======
-    <link rel="stylesheet" href="css/index.css"/>
->>>>>>> 15218f0b3536a5d62460e2712f8c7eec54ad15ba
 </head>
 
 <body>
@@ -33,7 +29,6 @@ if (!isset($_SESSION['username'])) {
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-                <li><?php echo $_SESSION['username']; ?></li>
                 <li><a href="php/logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -41,7 +36,6 @@ if (!isset($_SESSION['username'])) {
 
     <main>
         <section id="home">
-<<<<<<< HEAD
             <div class="home-hero">
                 <div class="hero-content">
                     <h1>Welcome to KPR Kita</h1>
@@ -61,13 +55,13 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="assets/images/bri.jpg" class="d-block w-100" alt="bri">
+                                <img src="images/home1.jpg" class="d-block w-100" alt="bri">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/mandiri.jpg" class="d-block w-100" alt="mandiri">
+                                <img src="images/home2.jpg" class="d-block w-100" alt="mandiri">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/btn.jpg" class="d-block w-100" alt="btn">
+                                <img src="images/home3.jpg" class="d-block w-100" alt="btn">
                             </div>
 
                         </div>
@@ -81,53 +75,12 @@ if (!isset($_SESSION['username'])) {
                         </button>
                     </div>
                 </div>
-=======
-          <div class="home-hero">
-              <div class="hero-content">
-                  <h1>Welcome to KPR Kita</h1>
-                  <p class="tagline">Solusi cerdas untuk hunian impian Anda</p>
-                  <div class="hero-highlight">
-                      <p>🛋️ Temukan konsep hidup seimbang dengan alam</p>
-                      <p>🌿 100% Material Ramah Lingkungan</p>
-                  </div>
-              </div>
-
-              <div class="caursel">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/bri.jpg" class="d-block w-100" alt="bri">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/mandiri.jpg" class="d-block w-100" alt="mandiri">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/btn.jpg" class="d-block w-100" alt="btn">
-                </div>
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-          </div>
->>>>>>> 15218f0b3536a5d62460e2712f8c7eec54ad15ba
         </section>
 
         <section id="about" class="about">
             <div class="about-container">
                 <div class="about-content">
-                    <h1>Tentang KPR Kita</h1>
+                    <h1 style="font-weight: 800;">Tentang KPR Kita</h1>
                     <div class="about-grid">
                         <div class="about-card">
                             <i class='bx bx-home-heart'></i>
@@ -158,7 +111,7 @@ if (!isset($_SESSION['username'])) {
                             <button class="cta-button">Hubungi Konsultan Kami</button>
                         </div>
                         <div class="about-image">
-                            <img src="images/home4.jpg" alt="Dream House">
+                            <img src="images/abouthome.jpg" alt="Dream House">
                         </div>
                     </div>
                 </div>
@@ -166,23 +119,34 @@ if (!isset($_SESSION['username'])) {
         </section>
 
         <section id="gallery" class="gallery">
-            <h1>Gallery</h1>
+            <h1 style="font-weight: 800;">Gallery</h1>
             <div class="flex-img">
                 <div class="home">
                     <h1>Senja</h1>
-                    <img src="images/home1.jpg" alt="Home 1">
+                    <img src="images/gallery1.jpg" alt="Home 1">
                     <p>A warm and simple home — perfect for young families seeking serenity.</p>
                 </div>
                 <div class="home">
                     <h1>Terra</h1>
-                    <img src="images/home2.jpg" alt="Home 2">
+                    <img src="images/gallery2.jpg" alt="Home 2">
                     <p>A modern yet grounded design with calming natural accents.</p>
                 </div>
                 <div class="home">
                     <h1>Sagara</h1>
-                    <img src="images/home3.jpg" alt="Home 3">
+                    <img src="images/gallery3.jpg" alt="Home 3">
                     <p>Elegant and spacious — made for those who love natural light and open space.</p>
                 </div>
+                <div class="home">
+                    <h1>Verdant</h1>
+                    <img src="images/gallery4.jpg" alt="Home 4">
+                    <p>Eco-friendly design with lush green integration for nature lovers.</p>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="gallery-details.html" class="cta-button">
+                    Lihat Detail Lengkap Properti
+                    <i class='bx bx-chevron-right'></i>
+                </a>
             </div>
         </section>
 
@@ -198,10 +162,10 @@ if (!isset($_SESSION['username'])) {
                     <div class="footer-column">
                         <h4>Menu</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
                         </ul>
                     </div>
 
