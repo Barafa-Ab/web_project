@@ -42,7 +42,6 @@ body {
 }
 
 .nav-links li a {
-<<<<<<< HEAD
   text-decoration: none;
   color: #355E3B;
   font-weight: 600;
@@ -69,18 +68,17 @@ body {
 
 .nav-links li a:hover {
   color: #204020;
-  border-bottom: none; /* Menghapus border sebelumnya */
-=======
-    text-decoration: none;
-    color: #355E3B;
-    font-weight: 600;
-    font-size: 18px;
-    transition: color 0.3s ease;
+  border-bottom: none; 
+  text-decoration: none;
+  color: #355E3B;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
     color: #204020;
->>>>>>> 15218f0b3536a5d62460e2712f8c7eec54ad15ba
+
 }
 
 
@@ -125,7 +123,7 @@ section p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 0;
-    position: relative;
+  position: relative;
   overflow: hidden;
 }
 
@@ -166,9 +164,9 @@ section p {
 
 }
 
-
 #home h1 {
   font-size: 3.5rem;
+  font-weight: 800;
   color: #355E3B;
   line-height: 1.2;
   margin-bottom: 25px;
