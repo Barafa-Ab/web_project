@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once __DIR__ . '/koneksi.php';
+require_once 'koneksi.php';
 
 // Cek login
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
-    exit();
+    echo "Anda harus login terlebih dahulu.";
+    exit;
 }
 
 // Fungsi untuk membuat nomor pendaftaran unik
@@ -22,25 +22,26 @@ function generateNomorPendaftaran($koneksi)
 }
 
 // Ambil dan sanitasi data dari form
-$nama        = htmlspecialchars(trim($_POST['nama']), ENT_QUOTES, 'UTF-8');
-$alamat      = htmlspecialchars(trim($_POST['alamat']), ENT_QUOTES, 'UTF-8');
-$pekerjaan   = htmlspecialchars(trim($_POST['pekerjaan']), ENT_QUOTES, 'UTF-8');
-$tipe        = $_POST['tipe_rumah'];
-$jangka      = (int) $_POST['jangka_waktu'];
-$dp_persen   = (float) $_POST['dp'];
-$metode      = $_POST['metode_pembayaran'];
-$user_id     = $_SESSION['user_id'];
+$nama     = htmlspecialchars(trim($_POST['nama']), ENT_QUOTES, 'UTF-8');
+$alamat   = htmlspecialchars(trim($_POST['alamat']), ENT_QUOTES, 'UTF-8');
+$pekerjaan = htmlspecialchars(trim($_POST['pekerjaan']), ENT_QUOTES, 'UTF-8');
+$tipe     = $_POST['tipe_rumah'];
+$jangka   = (int) $_POST['jangka_waktu'];
+$dp_persen = (float) $_POST['dp'];
+$metode   = $_POST['metode_pembayaran'];
+$user_id  = $_SESSION['user_id'];
 
 // Validasi tipe rumah
 $hargaRumah = [
-    "Senja"    => 1200000000,
-    "Terra"    => 1800000000,
-    "Sagara"   => 2500000000,
-    "Verdant"  => 2100000000
+    "Senja" => 1200000000,
+    "Terra" => 1800000000,
+    "Sagara" => 2500000000,
+    "Verdant" => 2100000000
 ];
 
 if (!isset($hargaRumah[$tipe])) {
-    die("Tipe rumah tidak valid.");
+    echo "Tipe rumah tidak valid.";
+    exit;
 }
 
 $harga = $hargaRumah[$tipe];
@@ -48,15 +49,16 @@ $jumlah_dp = $harga * $dp_persen;
 
 // Hitung bunga dan cicilan
 $bungaMap = [
-    5   => 0.018,
-    10  => 0.025,
-    15  => 0.03,
-    20  => 0.035,
-    30  => 0.04
+    5 => 0.018,
+    10 => 0.025,
+    15 => 0.03,
+    20 => 0.035,
+    30 => 0.04
 ];
 
 if (!isset($bungaMap[$jangka])) {
-    die("Jangka waktu tidak valid.");
+    echo "Jangka waktu tidak valid.";
+    exit;
 }
 
 $bunga = $bungaMap[$jangka];
@@ -65,52 +67,28 @@ $total_bunga = $sisa_pembayaran * $bunga;
 $total_tagihan = $sisa_pembayaran + $total_bunga;
 $cicilan_bulanan = ($total_tagihan / ($jangka * 12)) + 100000;
 
-
-// PROSES UPLOAD FILE 
-
+// Proses upload KTP
 $ext = pathinfo($_FILES['foto_ktp']['name'], PATHINFO_EXTENSION);
 $nama_ktp = uniqid("ktp_") . '.' . strtolower($ext);
+$lokasi_simpan = '../uploads/' . $nama_ktp;
 
-// 1. Path absolut ke folder uploads
-$base_dir = $_SERVER['DOCUMENT_ROOT'] . '/project_web/';
-$upload_dir = $base_dir . 'uploads/';
-
-// 2. Buat folder jika belum ada
-if (!is_dir($upload_dir)) {
-    if (!mkdir($upload_dir, 0755, true)) {
-        die("Gagal membuat folder uploads. Cek izin folder!");
-    }
-}
-
-$lokasi_simpan = $upload_dir . $nama_ktp;
-
-// 3. Validasi ekstensi file
 $allowed_ext = ['jpg', 'jpeg', 'png'];
 if (!in_array(strtolower($ext), $allowed_ext)) {
-    die("Format file tidak didukung. Gunakan JPG/JPEG/PNG.");
+    echo "Format file tidak didukung.";
+    exit;
 }
 
-// 4. Proses upload
 if (!move_uploaded_file($_FILES['foto_ktp']['tmp_name'], $lokasi_simpan)) {
-    die("Gagal mengunggah file. Pastikan folder uploads memiliki izin tulis.");
+    echo "Gagal mengunggah file.";
+    exit;
 }
 
-// Simpan ke Database
+// Buat nomor pendaftaran
 $nomorPendaftaran = generateNomorPendaftaran($koneksi);
 
+// Simpan ke database menggunakan prepared statement
 $key = $koneksi->prepare("INSERT INTO pendaftaran_kpr (
-    nomor_pendaftaran, 
-    id_user, 
-    nama_lengkap, 
-    alamat, 
-    pekerjaan, 
-    tipe_rumah, 
-    jangka_waktu, 
-    dp, 
-    metode_pembayaran, 
-    foto_ktp, 
-    total_harga, 
-    cicilan_per_bulan
+    nomor_pendaftaran, id_user, nama_lengkap, alamat, pekerjaan, tipe_rumah, jangka_waktu, dp, metode_pembayaran, foto_ktp, total_harga, cicilan_per_bulan
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 $key->bind_param(
@@ -129,12 +107,14 @@ $key->bind_param(
     $cicilan_bulanan
 );
 
+
 if ($key->execute()) {
     $_SESSION['notif'] = ['type' => 'success', 'message' => 'Pendaftaran berhasil disimpan.'];
     header("Location: ../hasil_pendaftaran.php");
+    exit();
 } else {
-    $_SESSION['notif'] = ['type' => 'error', 'message' => 'Gagal menyimpan data: ' . $koneksi->error];
-    header("Location: ../daftar.php");
-}
 
-exit();
+    $_SESSION['notif'] = ['type' => 'error', 'message' => 'Gagal Menyimpan Data!!!'];
+    header("Location: ../daftar.php");
+    exit();
+}
