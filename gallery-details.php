@@ -16,10 +16,10 @@
         <img src="images/logokomplit.png" alt="Logo" class="logo">
         <nav>
             <ul class="nav-links">
-                <li><a href="dashboard.html">Home</a></li>
-                <li><a href="dashboard.html#about">About Us</a></li>
-                <li><a href="dashboard.html#gallery">Gallery</a></li>
-                <li><a href="dashboard.html#contact">Contact Us</a></li>
+                <li><a href="dashboard.php">Home</a></li>
+                <li><a href="dashboard.php#about">About Us</a></li>
+                <li><a href="dashboard.php#gallery">Gallery</a></li>
+                <li><a href="dashboard.php#contact">Contact Us</a></li>
                 <li><a href="php/logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -29,7 +29,7 @@
         <section class="property-details">
             <div class="details-container">
                 <h1 style="font-weight: 800;">Detail Lengkap Properti</h1>
-                
+
                 <!-- Detail Senja -->
                 <div class="property-card">
                     <div class="property-images">
@@ -206,14 +206,14 @@
     </main>
 
     <div class="action-buttons">
-        <a href="dashboard.html#gallery" class="btn-back">
+        <a href="dashboard.php#gallery" class="btn-back">
             <i class='bx bx-arrow-back'></i> Kembali ke Gallery
         </a>
-        <a href="checkout.html" class="btn-order">
-            Lanjutkan Pesanan <i class='bx bx-chevron-right'></i>
+        <a href="daftar.php" class="btn-order">
+            Lanjutkan Pengajuan KPR <i class='bx bx-chevron-right'></i>
         </a>
     </div>
-    
+
     <footer class="custom-footer" id="contact">
         <div class="footer-container">
             <div class="footer-left">
@@ -226,10 +226,10 @@
                 <div class="footer-column">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="dashboard.html">Home</a></li>
-                        <li><a href="dashboard.html#about">About Us</a></li>
-                        <li><a href="dashboard.html#gallery">Gallery</a></li>
-                        <li><a href="dashboard.html#contact">Contact Us</a></li>
+                        <li><a href="dashboard.php">Home</a></li>
+                        <li><a href="dashboard.php#about">About Us</a></li>
+                        <li><a href="dashboard.php#gallery">Gallery</a></li>
+                        <li><a href="dashboard.php#contact">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -254,6 +254,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
+
 </html>

@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['username'])) {
-//     header("Location: index.html");
-//     exit();
-// }
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: index.html");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="gallery-cta">
-                <a href="gallery-details.html" class="cta-button">
+                <a href="gallery-details.php" class="cta-button">
                     Lihat Detail Lengkap Properti
                     <i class='bx bx-chevron-right'></i>
                 </a>

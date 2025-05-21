@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user = $result->fetch_assoc()) {
         if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header("Location: ../dashboard.php");
             exit();
@@ -21,18 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['notif'] = ['type' => 'error', 'message' => 'Password salah!'];
             header("Location: ../index.php");
             exit();
-
         }
     } else {
         $_SESSION['notif'] = ['type' => 'error', 'message' => 'User Tidak Ditemukan!'];
         header("Location: ../index.php");
         exit();
-
     }
-}else{
+} else {
     $_SESSION['notif'] = ['type' => 'error', 'message' => 'Terjadi kesalahan saat login.'];
     header("Location: ../index.php");
     exit();
 }
-
-?>
